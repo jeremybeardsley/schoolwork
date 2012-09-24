@@ -1,6 +1,7 @@
 class IntegerType implements AnyType {
 
-	   private int number;
+	//This class creates new IntegerType implemented from AnyType Interface   
+	private int number;
 
 	   public IntegerType() {
 	       number = 0;

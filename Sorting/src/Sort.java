@@ -1,9 +1,12 @@
 
 public class Sort {
 
+	//Counters that will be accessed by the TestSort Class to show us how
+	//many exchanged and compares for any one particular instance of Sort
 	private int exchanges = 0;
 	private int compares = 0;
 
+	//runs bubble sort on array of AnyType
 	public void bubbleSort(AnyType[] array) {
 
 		AnyType temp;
@@ -21,10 +24,10 @@ public class Sort {
 			}
 		}
 	}
-
+//Runs insertion sort on array of AnyType
 	public void insertionSort(AnyType[] array) {
 		    for (int i=0; i < array.length; i++) {
-		        /* Insert a[i] into the sorted sublist */
+		        
 		        AnyType v;
 		        v=array[i];
 		        int j;
@@ -38,7 +41,7 @@ public class Sort {
 		    }
 		}
 	
-
+//Run selection Sort on array of AnyType
 	public void selectionSort(AnyType[] array) {
 		int numberOfItems = array.length;
 		AnyType temp;
@@ -58,10 +61,11 @@ public class Sort {
 
 	}
 
+	//Getter for exchanges
 	public int getExchanges() {
 		return exchanges;
 	}
-
+	//getter for compares
 	public int getCompares() {
 		return compares;
 	}

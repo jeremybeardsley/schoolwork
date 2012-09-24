@@ -1,5 +1,5 @@
 class StringType implements AnyType {
-		
+	//For future use with StringType arrays	
 	   private String word;
 
 	   public StringType(){

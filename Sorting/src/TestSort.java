@@ -2,17 +2,17 @@ import java.io.*;
 import java.util.Scanner;
 
 class TestSort {
-
+	//This is the code that drives the entire program
 	public static void main(String[] args) throws IOException {
-
+		//creates 3 instances of scanner to read 3 seperate files
 		Scanner bestFileScan = new Scanner(new File("1to2000.txt"));
 		Scanner worstFileScan = new Scanner(new File("2000to1.txt"));
 		Scanner avgFileScan = new Scanner(new File("random.txt"));
-		
+		//initializes 3 new arrays of size 2000
 		IntegerType[] bestCaseBubble = new IntegerType[2000];
 		IntegerType[] worstCaseBubble = new IntegerType[2000];
 		IntegerType[] avgCaseBubble = new IntegerType[2000];
-
+		//assigns values into 3 arrays from the file scans
 		for (int i = 0; i < bestCaseBubble.length; i++) {
 			bestCaseBubble[i] = new IntegerType(bestFileScan.nextInt());
 		}
@@ -22,6 +22,8 @@ class TestSort {
 		for (int i = 0; i < avgCaseBubble.length; i++) {
 			avgCaseBubble[i] = new IntegerType(avgFileScan.nextInt());
 		}
+		//Creates clones of previous arrays.  Allows me to keep seperate counters for
+		//all cases on each sort type.
 		IntegerType[]bestCaseInsertion = bestCaseBubble.clone();
 		IntegerType[]bestCaseSelection = bestCaseBubble.clone();
 		IntegerType[]avgCaseInsertion = avgCaseBubble.clone();
@@ -30,7 +32,7 @@ class TestSort {
 		IntegerType[]worstCaseSelection = worstCaseBubble.clone();
 		
 		
-		
+		//output of the table. 
 		System.out.print("Results for Bubble Sort:");
 		Sort bubbleSortBest = new Sort();
 		bubbleSortBest.bubbleSort(bestCaseBubble);
