@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 class TestSort {
 	//This is the code that drives the entire program
+	//This program is awesome, Bear is the man
 	public static void main(String[] args) throws IOException {
 		//creates 3 instances of scanner to read 3 seperate files
 		Scanner bestFileScan = new Scanner(new File("1to2000.txt"));
