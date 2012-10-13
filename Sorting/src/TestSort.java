@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 class TestSort {
 	//This is the code that drives the entire program
-	//This program is awesome, Bear is the man
 	public static void main(String[] args) throws IOException {
 		//creates 3 instances of scanner to read 3 seperate files
 		Scanner bestFileScan = new Scanner(new File("1to2000.txt"));
@@ -27,11 +26,13 @@ class TestSort {
 		//all cases on each sort type.
 		IntegerType[]bestCaseInsertion = bestCaseBubble.clone();
 		IntegerType[]bestCaseSelection = bestCaseBubble.clone();
+		IntegerType[]bestCaseShell = bestCaseBubble.clone();
 		IntegerType[]avgCaseInsertion = avgCaseBubble.clone();
 		IntegerType[]avgCaseSelection = avgCaseBubble.clone();
+		IntegerType[]avgCaseShell = avgCaseBubble.clone();
 		IntegerType[]worstCaseInsertion = worstCaseBubble.clone();
 		IntegerType[]worstCaseSelection = worstCaseBubble.clone();
-		
+		IntegerType[]worstCaseShell = worstCaseBubble.clone();
 		
 		//output of the table. 
 		System.out.print("Results for Bubble Sort:");
@@ -90,6 +91,25 @@ class TestSort {
 		System.out.print("\nWorst Case\tExchanges: "
 				+ insertionSortWorst.getExchanges() + "\tCompares: "
 				+ insertionSortWorst.getCompares());
+		
+		System.out.print("\nResults for Shell Sort:");
+		Sort ShellSortBest = new Sort();
+		ShellSortBest.shellSort(bestCaseShell);
+		System.out.print("\nBest Case\tExchanges: "
+				+ ShellSortBest.getExchanges() + "\t\tCompares: "
+				+ ShellSortBest.getCompares());
+		
+		Sort ShellSortAvg = new Sort();
+		ShellSortAvg.shellSort(avgCaseShell);
+		System.out.print("\nAvg Case\tExchanges: "
+				+ ShellSortAvg.getExchanges() + "\tCompares: "
+				+ ShellSortAvg.getCompares());
+
+		Sort ShellSortWorst = new Sort();
+		ShellSortWorst.shellSort(worstCaseShell);
+		System.out.print("\nWorst Case\tExchanges: "
+				+ ShellSortWorst.getExchanges() + "\t\tCompares: "
+				+ ShellSortWorst.getCompares());
 
 	}
 }

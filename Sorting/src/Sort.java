@@ -60,7 +60,20 @@ public class Sort {
 		}
 
 	}
-
+	public void shellSort(AnyType[] array) {
+		for (int gap = array.length / 2; gap > 0; gap = gap == 2 ? 1
+				: (int) (gap / 2.2))
+			for (int i = gap; i < array.length; i++) {
+				AnyType tmp = array[i];
+				int j = i;
+				compares++;
+				for (; j >= gap && array[j - gap].isBetterThan(tmp); j -= gap) {
+					array[j] = array[j - gap];
+					exchanges++;
+				}
+				array[j] = tmp;
+			}
+	}
 	//Getter for exchanges
 	public int getExchanges() {
 		return exchanges;
