@@ -27,12 +27,16 @@ class TestSort {
 		IntegerType[]bestCaseInsertion = bestCaseBubble.clone();
 		IntegerType[]bestCaseSelection = bestCaseBubble.clone();
 		IntegerType[]bestCaseShell = bestCaseBubble.clone();
+		IntegerType[]bestCaseMerge = bestCaseBubble.clone();
 		IntegerType[]avgCaseInsertion = avgCaseBubble.clone();
 		IntegerType[]avgCaseSelection = avgCaseBubble.clone();
 		IntegerType[]avgCaseShell = avgCaseBubble.clone();
+		IntegerType[]avgCaseMerge = avgCaseBubble.clone();
 		IntegerType[]worstCaseInsertion = worstCaseBubble.clone();
 		IntegerType[]worstCaseSelection = worstCaseBubble.clone();
 		IntegerType[]worstCaseShell = worstCaseBubble.clone();
+		IntegerType[]worstCaseMerge = worstCaseBubble.clone();
+		
 		
 		//output of the table. 
 		System.out.print("Results for Bubble Sort:");
@@ -110,6 +114,25 @@ class TestSort {
 		System.out.print("\nWorst Case\tExchanges: "
 				+ ShellSortWorst.getExchanges() + "\t\tCompares: "
 				+ ShellSortWorst.getCompares());
+		
+		System.out.print("\nResults for Merge Sort:");
+		Sort MergeSortBest = new Sort();
+		MergeSortBest.msort(bestCaseMerge);
+		System.out.print("\nBest Case\tExchanges: "
+				+ MergeSortBest.getExchanges() + "\t\tCompares: "
+				+ MergeSortBest.getCompares());
+		
+		Sort MergeSortAvg = new Sort();
+		MergeSortAvg.msort(avgCaseMerge);
+		System.out.print("\nAvg Case\tExchanges: "
+				+ MergeSortAvg.getExchanges() + "\t\tCompares: "
+				+ MergeSortAvg.getCompares());
+
+		Sort MergeSortWorst = new Sort();
+		MergeSortWorst.msort(worstCaseMerge);
+		System.out.print("\nWorst Case\tExchanges: "
+				+ MergeSortWorst.getExchanges() + "\tCompares: "
+				+ MergeSortWorst.getCompares());
 
 	}
 }
